@@ -37,9 +37,15 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 Dunkin Donuts:
 https://www.dunkin.nl
   #### Screenshot(s) van de eerste pagina (small screen): 
-  hier de naam van de pagina  
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="omschrijving van de pagina">
-
+Homepage <br>
+<img src="readme-images/IMG_8551.png" width="375px" alt="omschrijving van de pagina">
+<img src="readme-images/IMG_8552.png" width="375px" alt="omschrijving van de pagina">
+<img src="readme-images/IMG_8553.png" width="375px" alt="omschrijving van de pagina">
+<img src="readme-images/IMG_8554.png" width="375px" alt="omschrijving van de pagina">
+<img src="readme-images/IMG_8555.png" width="375px" alt="omschrijving van de pagina">
+<img src="readme-images/IMG_8556.png" width="375px" alt="omschrijving van de pagina">
+<img src="readme-images/IMG_8557.png" width="375px" alt="omschrijving van de pagina">
+<img src="readme-images/IMG_8558.png" width="375px" alt="omschrijving van de pagina">
   #### Screenshot(s) van de tweede pagina (small screen):
   hier de naam van de pagina  
   <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="omschrijving van de pagina">
