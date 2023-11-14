@@ -48,7 +48,13 @@ Homepage <br>
 <img src="readme-images/IMG_8558.png" width="375px" alt="omschrijving van de pagina">
   #### Screenshot(s) van de tweede pagina (small screen):
   hier de naam van de pagina  
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="omschrijving van de pagina">
+  <img src="readme-images/Focus1.PNG" width="375px" alt="omschrijving van de pagina">
+  <img src="readme-images/Focus2.PNG" width="375px" alt="omschrijving van de pagina">
+  <img src="readme-images/Focus3.PNG" width="375px" alt="omschrijving van de pagina">
+  <img src="readme-images/Focus4.PNG" width="375px" alt="omschrijving van de pagina">
+  <img src="readme-images/Focus5.PNG" width="375px" alt="omschrijving van de pagina">
+  <img src="readme-images/Focus6.PNG" width="375px" alt="omschrijving van de pagina">
+            
  
 </details>
 
