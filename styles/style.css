@@ -1,33 +1,540 @@
+@import url('https://fonts.cdnfonts.com/css/dunkin');
+@import url("https://use.typekit.net/ktq6zwc.css");
+
 /**************/
 /* CSS REMEDY */
 /**************/
 *, *::after, *::before {
-  box-sizing:border-box;  
+	box-sizing:border-box;  
+  }
+
+  /*********************/
+  /* CUSTOM PROPERTIES */
+  /*********************/
+  
+    :root { 
+	  --color-text:#111;
+	  --color-background: whitesmoke;
+	  --color-headerBackground: white;
+	  --donut-oranje: #ff6e0c;
+	  --donut-magenta:#EC1A8E;
+	  --donut-bruin: #653819;
+	  --donut-blauw: #71c5e8;
+
+	  --donut-font: 'Dunkin', sans-serif;
+	  --bestel-font: "urbane-rounded", sans-serif;
+
+	  --spacingElementen: 1.5em;
+	  --columnstartTwee: 2;
+  }
+
+  /* Ik probeer hier een dark mode toe te voegen, maar ik kan dark mode maar niet aan zetten voor chrome, d
+  dus kan ik niet zien hoe het eruit ziet. */
+
+@media (prefers-color-scheme: dark) {
+	:root  {
+		--color-text:rgb(255, 255, 255);
+		--color-background: rgb(32, 32, 32);
+		--color-headerBackground: #5c5c5c;
+		--donut-oranje: #ff6e0c;
+		--donut-magenta:#EC1A8E;
+		--donut-bruin: #93684b;
+		--donut-blauw: #71c5e8;
+		--donut-font: 'Dunkin', sans-serif;
+		--bestel-font: "urbane-rounded", sans-serif;
+  
+		--spacingElementen: 1.5em;
+		--columnstartTwee: 2;
+	}
+}
+  /****************/
+  /* JOUW STYLING */
+  *{
+	margin: 0%;
+  }
+
+  /* HEADER */
+
+  header {
+	width: 100vw;
+	background-color: var(--color-headerBackground);
+	display: grid;
+	top: 0;
+	left: 0;
+	position: sticky; 
+
+	grid-template-columns: 4em 1fr 4em;
+	grid-template-rows: max-content 1fr;
+
+	height: 16vh;
+  }
+
+  header h2{
+	color: white;
+	font-family: var(--donut-font);
+	text-align: center;
+	font-size: 10px;
+
+	padding-top: 2em;
+	padding-bottom: 3em;
+	height: 3em;
+
+	background-color: var(--donut-oranje);
+
+	grid-row-start: 1;
+	grid-column-start: 1;
+	grid-column-end: span 3;
+  }
+
+  nav {
+	display: grid;
+	width: auto;
+	max-height: auto;
+	grid-template-columns: 7em 1fr 7em;
+	grid-template-rows: 7.5vh 1fr;
+
+	grid-column-start: 1;
+	grid-column-end: span 3;
+	grid-row-start: 2;
+	grid-row-end: span 3;
+  }
+
+  nav div:first-of-type {
+	grid-column-start: 2;
+	grid-column-end: span 1;
+
+	/*background: var(--logoDunkin) center / cover;*/
+	background: url(/images/dunkinLogo.png) center / cover;
+
+	width: 6.5em;
+	height: 3em;
+
+	margin: auto;
+  }
+
+  @media (prefers-color-scheme: dark) {
+	nav div:first-of-type {
+		background: url(/images/darkmodeLogo.png) center / cover;
+}
+  }
+
+  /* nav button */
+
+  nav button {
+	padding: 8%;
+	border-radius: 4em;
+
+	grid-column-start: 3;
+	width: 2.75rem;
+	height: 2.75rem;
+	margin: auto;
+
+	border: none;
+	background-color: var(--donut-oranje);
+  }
+
+  nav button:active {
+	background-color: var(--donut-magenta);
+  }
+
+  nav button img {
+	object-fit: contain;
+	max-width: max-content;
+	width: 50%;
+	height: 50%;
+  }
+
+ /* navigatie */
+
+  nav ul {
+	visibility: hidden;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: visible;
+	grid-column-start: 1;
+	grid-row-start: 2x;
+	display: grid;
+	background-color: white;
+
+	width: 100vw;
+	height: 100vh;
+  }
+  
+  nav ul li {
+	float: left;
+  }
+  
+  nav ul li a {
+	display: block;
+	color: var(--donut-bruin);
+	text-align: center;
+	padding: 16px;
+	text-decoration: none;
+	font-family: var(--donut-font);
+	font-size: 0.5em;
+  }
+
+  /* FOOTER */
+
+  footer {
+	display: grid;
+	height: 13vh;
+	/*position: fixed;*/
+	background-color: white;
+	z-index: 2;
+	top: 87vh;
+
+	align-items: center;
+	justify-content: center;
+
+	width: 100vw;
+  }
+
+  footer a {
+	text-decoration: none;
+	text-transform: none;
+	color: white;
+	padding: 1.5em;
+	background-color: var(--donut-oranje);
+	padding-left: 8em;
+	padding-right: 8em;
+	border-radius: 8em;
+	
+	font-family: var(--donut-font);
+  }
+
+  /* MAIN */
+
+main {
+	display: grid inline;
+	grid-template-columns: 5vw 10vw 70vw 10vw 5vw;
+	grid-template-rows: calc(var(--spacingElementen) + 0.5em)  max-content 1fr;
+	width: 100vw;
+	height: auto;
+	background-color: var(--color-background);
+}
+
+ /* sectie 1: We love coffee */
+
+ main a:first-of-type {
+	margin-bottom: var(--spacingElementen);
+
+	grid-column-start: var(--columnstartTwee);
+	grid-column-end: span 3;
+	grid-row: 2;
+	max-width: 100vw;
+	height: auto;
+ }
+
+ main a:first-of-type img {
+	object-fit: contain;
+	max-width: max-content;
+	width: 100%;
+	height: auto;
+
+	border-radius: 3em;
+ }
+ 
+ /* tweede section: afhalen of bestellen */
+
+ main section#bestelSectie {
+	margin-bottom: var(--spacingElementen);
+
+	grid-column-start: var(--columnstartTwee);
+	grid-column-end: 5;
+	grid-row-start: 3;
+	grid-row-end: span 1;
+	display: grid inline;
+	grid-template-columns: 1em 1fr 1fr 1em 1fr 1fr 1em;
+	grid-template-rows: 2em 2fr 1.8em 0.8fr 2em;
+
+	background-color: var(--donut-magenta);
+	padding-left: 2em;
+	padding-right: 2em;
+	border-radius: 3em;
+
+	object-fit: fill;
+
+	color: white;
+ }
+
+ main section#bestelSectie h2 {
+	grid-column-start: 2;
+	grid-column-end: span 5;
+	grid-row: 2;
+
+	font-family: var(--donut-font);
+	font-weight: 500;
+	font-style: normal;
+	font-size: 3.5em;
+	text-align: center;
+	text-transform: uppercase;
+	object-fit: contain;
+ }
+
+ main section#bestelSectie p {
+	grid-column-start: 2;
+	grid-column-end: span 5;
+	grid-row: 3;
+
+	font-size: smaller;
+	font-family: var(--donut-font);
+ }
+
+#eersteButton {
+	grid-column-start: 5;
+	grid-column-end: span 2;
+	grid-row-start: 4;
+	grid-row-end: span 1;
+
+	padding: 1em;
+	
+	border: none;
+	border-radius: 1em;
+
+	font-family: var(--donut-font);
+	font-weight: 900;
+	font-style: normal;
+	text-transform: uppercase;
+
+	background-color: white;
+	color: var(--donut-magenta);
+ }
+
+#tweedeButton {
+	grid-column-start: 2;
+	grid-column-end: span 2;
+	grid-row-start: 4;
+	grid-row-end: span 1;
+
+	padding: 1em;
+	
+	border: none;
+	border-radius: 1em;
+
+	font-family: var(--donut-font);
+	font-weight: 900;
+	font-style: normal;
+	text-transform: uppercase;
+
+	background-color: white;
+	color: var(--donut-magenta);
+ }
+
+ /* derde sectie: Ajax */
+
+main a:nth-of-type(2) {
+	margin-bottom: var(--spacingElementen);
+
+	grid-row-start: 4;
+	grid-column-start: var(--columnstartTwee);
+	grid-column-end: span 3;
+}
+
+main a:nth-of-type(2) img {
+	object-fit: contain;
+	max-width: max-content;
+	width: 100%;
+	height: auto;
+
+	border-radius: 3em;
+}
+
+/* vierde sectie onlineBestellen */
+
+main section#onlineBestellen {
+	margin-bottom: var(--spacingElementen);
+	height: max-content;
+	grid-row-start: 5;
+	grid-column-start: var(--columnstartTwee) ;
+	grid-column-end: 4;
+}
+
+section#onlineBestellen h2 {
+	color: var(--donut-magenta);
+	font-family: var(--donut-font);
+	font-size: 4em;
+	text-transform: uppercase;
+	line-height: 94%;
+}
+
+section#onlineBestellen em {
+	font-style: normal;
+	color: var(--donut-oranje);
+}
+
+/* Bestel uitleg blokken */
+
+section.bestelUitleg {
+	grid-column-start: var(--columnstartTwee);
+	grid-column-end: span 3;
+
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	grid-template-rows: 1fr 1fr;
+
+	background-color: var(--color-headerBackground);
+	padding: 1em;
+	margin-bottom: var(--spacingElementen);
+
+	border-radius: 4em;
+}
+
+section.bestelUitleg h3 {
+	color: var(--donut-magenta);
+	font-family: var(--donut-font);
+	text-transform: uppercase;
+	font-size: 1.1em;
+
+	margin: auto;
+
+	grid-column: 2 span 1;
+	grid-row: 1 span 1;
+}
+
+section.bestelUitleg p {
+	grid-column: 2 span 1;
+	grid-row: 2 span 1;
+
+	color: rgb(146, 146, 146);
+	font-size: 0.8em;
+	font-family: var(--donut-font);
+}
+
+section.bestelUitleg img {
+	grid-column-start: 1;
+	grid-column-end: span 1;
+	grid-row-start: 1;
+	grid-row-end: span 2;
+	margin: auto;
+	margin-right: 1em;
+
+	object-fit: contain;
+	width: 4em;
+	height: 4em;
+
+	padding: 5px;
+	background-color: var(--donut-magenta);
+	border-radius: 10em;
+}
+
+section.bestelUitleg img#oranjeBestel {
+	background-color: var(--donut-oranje);
+}
+
+section#bestelUitlegEen {
+	grid-row-start: 6;
+}
+
+
+section#bestelUitlegTwee {
+	grid-row-start: 7;
+}
+
+
+section#bestelUitlegDrie {
+	grid-row-start: 8;
+}
+
+/* app jij m al? sectie */
+
+section#appJij {
+	grid-column-start: var(--columnstartTwee);
+	grid-column-end: span 3;
+	grid-row-start: 9;
+
+	display: grid;
+	grid-template-columns: 1fr 80% 1fr;
+	grid-template-rows: 0.8fr 0.5fr 0.6fr 0.8fr 0.8fr 1fr;
+
+	padding: 2em;
+	padding-bottom: 0;
+	border-radius: 2.5em;
+
+	background-color: var(--donut-blauw);
+}
+
+section#appJij h2 {
+	grid-row-start: 1;
+	grid-column-start: 2;
+	grid-column-end: span 1;
+
+	color: white;
+	font-family: var(--donut-font);
+	text-transform: uppercase;
+	word-spacing: -1;
+
+	font-size: 2.8em;
+
+	max-width: fit-content;
+	margin: auto;
+}
+
+section#appJij h3 {
+	grid-row-start: 2;
+	grid-column-start: 2;
+	grid-column-end: span 1;
+
+	color: white;
+	font-family: var(--donut-font);
+
+	font-size: 1.3em;
+	margin: auto;
+}
+
+section#appJij p {
+	grid-row-start: 3;
+	grid-column-start: 2;
+	grid-column-end: span 1;
+
+	color: white;
+	font-family: var(--donut-font);
+	font-size: 1em;
+
+	margin: auto;
+}
+
+section#appJij a:first-of-type {
+	grid-row-start: 4;
+	grid-column-start: 2;
+	grid-column-end: span 1;
+
+	padding: 1em;
+	background-color: black;
+	border-radius: 4em;
+
+	margin: auto;
+	margin-bottom: 1em;
+}
+
+section#appJij a {
+	grid-row-start: 5;
+	grid-column-start: 2;
+	grid-column-end: span 1;
+
+	padding: 1em;
+	background-color: black;
+	border-radius: 4em;
+
+	margin: auto;
+	margin-bottom: 1em;
+}
+
+section#appJij img {
+	grid-row-start: 6;
+	grid-column-start: 2;
+	grid-column-end: span 1;
+
+	object-fit: contain;
+	max-width: max-content;
+	width: 100%;
+	height: auto;
+	margin: auto;
+	margin-bottom: 0;
 }
 
 
 
 
-
-
-/*********************/
-/* CUSTOM PROPERTIES */
-/*********************/
-:root {
-	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
-	--donut-oranje:#FF671F;
-	--donut-magenta:#DA1884;
-}
-
-
-
-
-
-/****************/
-/* JOUW STYLING */
-/****************/
-
-/* jouw code */
 

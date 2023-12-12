@@ -67,7 +67,21 @@ Focus pagina <br>
 
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen:
-
+De dunkin Donuts site heeft veel mankementen, zoals de volgenden:
+- Alles lijkt kwa :hover state op een button, ook plaatjes en kleine blokken hebben hetzelfde effect als buttons.
+- Er waren heeeel veel errors in hun html
+- De keyboard focus ging niet chronologisch
+- Er zijn in de nav een paar knoppen die niet genoeg ruimte hebben als spacing
+- Er zijn geen headings 
+- geen h1
+- geen li items
+- geen alt tekst
+- tekst in img werd niet vertaald door alt tekst
+- linkjes worden niet aangekaart als link
+- geen dark mode
+- geen high contrast
+- functionaliteit wordt niet alleen weergegeven door kleur, maar alles heeft dezelfde hover state dus 
+je kan alsnog niet zien wat een knop is en wat niet
 </details>
 
 
@@ -78,13 +92,10 @@ Focus pagina <br>
   <summary>uitwerken na afloop 3<sup>e</sup> werkgroep</summary>
 
   ### de hele pagina: 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="breakdown van de hele pagina">
+  <img src="readme-images/Breakdown.png" width="375px" alt="breakdown van de hele pagina">
 
   ### dynamisch deel (bijv menu): 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="breakdown van een dynamisch deel">
-
-  ### wellicht nog een dynamisch deel (bijv filter): 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="breakdown van nog een dynamisch deel">
+  <img src="readme-images/dynamisch.png" width="375px" alt="breakdown van een dynamisch deel">
 
 </details>
 
@@ -98,8 +109,7 @@ Focus pagina <br>
   <summary>uitwerken voor 1<sup>e</sup> voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
-
+Ik vond het erg lastig om een weg te vinden in waar ik moest beginnen, vooral bij het maken van een layout.
 
   ### Agenda voor meeting
   samen met je groepje opstellen
@@ -114,8 +124,10 @@ Focus pagina <br>
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
+  - punt 1: alles was in orde, ook kon ik gaan beginnen, er was meer uitleg over grids waar 
+  ik nu voor de eerste keer aan kan gaan werken
+  - punt 2:
+  Verder is er nog niet echt zekerheid in hoe ik verder moet, maarja ik moet nog beginnen.
   - nog een punt
   - ...
 
@@ -133,6 +145,7 @@ Focus pagina <br>
   ### Stand van zaken
   hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
 
+Ik heb mijn html al zo goed als af, toch moet ik alles met css goed gaan ordenen.
 
   ### Agenda voor meeting
   samen met je groepje opstellen
@@ -147,8 +160,10 @@ Focus pagina <br>
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
+  - punt 1:
+  Ik heb een begin gemaakt met css, dit moet natuurlijk veel meer uitgebreidt worden.
+  - punt 2:
+  Ik heb een goede basis gemaakt met grids en hiermee werken gaat steeds beter.
   - nog een punt
 - ...
 
@@ -165,6 +180,32 @@ Focus pagina <br>
 
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen (geef ook aan wat er verbeterd is):
+
+  Hier de lijst van de eerste toegankelijkheids test:
+- Er waren heeeel veel errors in hun html
+- De keyboard focus ging niet chronologisch
+- Er zijn in de nav een paar knoppen die niet genoeg ruimte hebben als spacing
+- Er zijn geen headings 
+- geen h1
+- geen li items
+- geen alt tekst
+- tekst in img werd niet vertaald door alt tekst
+- linkjes worden niet aangekaart als link
+- geen dark mode
+- geen high contrast
+- functionaliteit wordt niet alleen weergegeven door kleur, maar alles heeft dezelfde hover state dus 
+je kan alsnog niet zien wat een knop is en wat niet
+
+Wat heb ik verbeterd:
+-Ik heb weinig tot geen error in mijn html
+- als het goed is kan je met screenreader er goed doorheen
+- genoeg spacing in mijn nav
+- ik heb headings gebruikt
+- ik heb alles een alt tekst gegeven en het wordt in het NL voorgelezen.
+- alle linkjes worden vertaalt als linkjes
+- ik heb een minimalistische dark mode gemaakt die werkt
+- high contrast heb ik helaas niet gemaakt
+- ik heb niet alles een hover state gegeven.
 
 </details>
 

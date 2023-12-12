@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../../Creative Cloud Files/FED/basiswebsite/files"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "FED"
+	}
+}
