@@ -1,540 +1,200 @@
-@import url('https://fonts.cdnfonts.com/css/dunkin');
-@import url("https://use.typekit.net/ktq6zwc.css");
+@import url("https://use.typekit.net/uxe4vzr.css");
 
-/**************/
-/* CSS REMEDY */
-/**************/
-*, *::after, *::before {
-	box-sizing:border-box;  
-  }
 
-  /*********************/
-  /* CUSTOM PROPERTIES */
-  /*********************/
-  
-    :root { 
-	  --color-text:#111;
-	  --color-background: whitesmoke;
-	  --color-headerBackground: white;
-	  --donut-oranje: #ff6e0c;
-	  --donut-magenta:#EC1A8E;
-	  --donut-bruin: #653819;
-	  --donut-blauw: #71c5e8;
-
-	  --donut-font: 'Dunkin', sans-serif;
-	  --bestel-font: "urbane-rounded", sans-serif;
-
-	  --spacingElementen: 1.5em;
-	  --columnstartTwee: 2;
-  }
-
-  /* Ik probeer hier een dark mode toe te voegen, maar ik kan dark mode maar niet aan zetten voor chrome, d
-  dus kan ik niet zien hoe het eruit ziet. */
-
-@media (prefers-color-scheme: dark) {
-	:root  {
-		--color-text:rgb(255, 255, 255);
-		--color-background: rgb(32, 32, 32);
-		--color-headerBackground: #5c5c5c;
-		--donut-oranje: #ff6e0c;
-		--donut-magenta:#EC1A8E;
-		--donut-bruin: #93684b;
-		--donut-blauw: #71c5e8;
-		--donut-font: 'Dunkin', sans-serif;
-		--bestel-font: "urbane-rounded", sans-serif;
-  
-		--spacingElementen: 1.5em;
-		--columnstartTwee: 2;
-	}
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
 }
-  /****************/
-  /* JOUW STYLING */
-  *{
-	margin: 0%;
-  }
 
-  /* HEADER */
-
-  header {
-	width: 100vw;
-	background-color: var(--color-headerBackground);
-	display: grid;
-	top: 0;
-	left: 0;
-	position: sticky; 
-
-	grid-template-columns: 4em 1fr 4em;
-	grid-template-rows: max-content 1fr;
-
-	height: 16vh;
-  }
-
-  header h2{
-	color: white;
-	font-family: var(--donut-font);
-	text-align: center;
-	font-size: 10px;
-
-	padding-top: 2em;
-	padding-bottom: 3em;
-	height: 3em;
-
-	background-color: var(--donut-oranje);
-
-	grid-row-start: 1;
-	grid-column-start: 1;
-	grid-column-end: span 3;
-  }
-
-  nav {
-	display: grid;
-	width: auto;
-	max-height: auto;
-	grid-template-columns: 7em 1fr 7em;
-	grid-template-rows: 7.5vh 1fr;
-
-	grid-column-start: 1;
-	grid-column-end: span 3;
-	grid-row-start: 2;
-	grid-row-end: span 3;
-  }
-
-  nav div:first-of-type {
-	grid-column-start: 2;
-	grid-column-end: span 1;
-
-	/*background: var(--logoDunkin) center / cover;*/
-	background: url(/images/dunkinLogo.png) center / cover;
-
-	width: 6.5em;
-	height: 3em;
-
-	margin: auto;
-  }
-
-  @media (prefers-color-scheme: dark) {
-	nav div:first-of-type {
-		background: url(/images/darkmodeLogo.png) center / cover;
+:root {
+    --fontReg: "aktiv-grotesk", sans-serif;
+    --fontThin: "aktiv-grotesk-thin", sans-serif;
+    --fontLight: "aktiv-grotesk", sans-serif;
 }
-  }
 
-  /* nav button */
+/* Hier begint mijn code */
 
-  nav button {
-	padding: 8%;
-	border-radius: 4em;
+body {
+    background-image: repeating-linear-gradient(#89C4A7, #1f6f48, #1f6f48);
 
-	grid-column-start: 3;
-	width: 2.75rem;
-	height: 2.75rem;
-	margin: auto;
+}
 
-	border: none;
-	background-color: var(--donut-oranje);
-  }
+header {
+    display: flex;
+    padding-top: 2em;
 
-  nav button:active {
-	background-color: var(--donut-magenta);
-  }
+    justify-content: center;
+}
 
-  nav button img {
-	object-fit: contain;
-	max-width: max-content;
-	width: 50%;
-	height: 50%;
-  }
+header img {
+    width: 66px;
 
- /* navigatie */
-
-  nav ul {
-	visibility: hidden;
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: visible;
-	grid-column-start: 1;
-	grid-row-start: 2x;
-	display: grid;
-	background-color: white;
-
-	width: 100vw;
-	height: 100vh;
-  }
-  
-  nav ul li {
-	float: left;
-  }
-  
-  nav ul li a {
-	display: block;
-	color: var(--donut-bruin);
-	text-align: center;
-	padding: 16px;
-	text-decoration: none;
-	font-family: var(--donut-font);
-	font-size: 0.5em;
-  }
-
-  /* FOOTER */
-
-  footer {
-	display: grid;
-	height: 13vh;
-	/*position: fixed;*/
-	background-color: white;
-	z-index: 2;
-	top: 87vh;
-
-	align-items: center;
-	justify-content: center;
-
-	width: 100vw;
-  }
-
-  footer a {
-	text-decoration: none;
-	text-transform: none;
-	color: white;
-	padding: 1.5em;
-	background-color: var(--donut-oranje);
-	padding-left: 8em;
-	padding-right: 8em;
-	border-radius: 8em;
-	
-	font-family: var(--donut-font);
-  }
-
-  /* MAIN */
+    margin-bottom: -3em;
+    z-index: 1;
+}
 
 main {
-	display: grid inline;
-	grid-template-columns: 5vw 10vw 70vw 10vw 5vw;
-	grid-template-rows: calc(var(--spacingElementen) + 0.5em)  max-content 1fr;
-	width: 100vw;
-	height: auto;
-	background-color: var(--color-background);
+    display: grid;
+    grid-template-columns: 2em 1fr 2em;
+    padding-bottom: 5em;
+    width: 100vw;
+
 }
 
- /* sectie 1: We love coffee */
+section {
+    background-color: white;
+    grid-column-start: 2;
+    border-left: 0.8em solid #FFE500;
+    display: grid;
+    grid-template-columns: 15px 1fr 15px;
 
- main a:first-of-type {
-	margin-bottom: var(--spacingElementen);
+    padding-bottom: 2em;
 
-	grid-column-start: var(--columnstartTwee);
-	grid-column-end: span 3;
-	grid-row: 2;
-	max-width: 100vw;
-	height: auto;
- }
-
- main a:first-of-type img {
-	object-fit: contain;
-	max-width: max-content;
-	width: 100%;
-	height: auto;
-
-	border-radius: 3em;
- }
- 
- /* tweede section: afhalen of bestellen */
-
- main section#bestelSectie {
-	margin-bottom: var(--spacingElementen);
-
-	grid-column-start: var(--columnstartTwee);
-	grid-column-end: 5;
-	grid-row-start: 3;
-	grid-row-end: span 1;
-	display: grid inline;
-	grid-template-columns: 1em 1fr 1fr 1em 1fr 1fr 1em;
-	grid-template-rows: 2em 2fr 1.8em 0.8fr 2em;
-
-	background-color: var(--donut-magenta);
-	padding-left: 2em;
-	padding-right: 2em;
-	border-radius: 3em;
-
-	object-fit: fill;
-
-	color: white;
- }
-
- main section#bestelSectie h2 {
-	grid-column-start: 2;
-	grid-column-end: span 5;
-	grid-row: 2;
-
-	font-family: var(--donut-font);
-	font-weight: 500;
-	font-style: normal;
-	font-size: 3.5em;
-	text-align: center;
-	text-transform: uppercase;
-	object-fit: contain;
- }
-
- main section#bestelSectie p {
-	grid-column-start: 2;
-	grid-column-end: span 5;
-	grid-row: 3;
-
-	font-size: smaller;
-	font-family: var(--donut-font);
- }
-
-#eersteButton {
-	grid-column-start: 5;
-	grid-column-end: span 2;
-	grid-row-start: 4;
-	grid-row-end: span 1;
-
-	padding: 1em;
-	
-	border: none;
-	border-radius: 1em;
-
-	font-family: var(--donut-font);
-	font-weight: 900;
-	font-style: normal;
-	text-transform: uppercase;
-
-	background-color: white;
-	color: var(--donut-magenta);
- }
-
-#tweedeButton {
-	grid-column-start: 2;
-	grid-column-end: span 2;
-	grid-row-start: 4;
-	grid-row-end: span 1;
-
-	padding: 1em;
-	
-	border: none;
-	border-radius: 1em;
-
-	font-family: var(--donut-font);
-	font-weight: 900;
-	font-style: normal;
-	text-transform: uppercase;
-
-	background-color: white;
-	color: var(--donut-magenta);
- }
-
- /* derde sectie: Ajax */
-
-main a:nth-of-type(2) {
-	margin-bottom: var(--spacingElementen);
-
-	grid-row-start: 4;
-	grid-column-start: var(--columnstartTwee);
-	grid-column-end: span 3;
+    filter: drop-shadow(2px 5px 5px rgba(0, 0, 0, 0.24));
 }
 
-main a:nth-of-type(2) img {
-	object-fit: contain;
-	max-width: max-content;
-	width: 100%;
-	height: auto;
-
-	border-radius: 3em;
+h1,
+p,
+ul,
+h2 {
+    grid-column-start: 2;
 }
 
-/* vierde sectie onlineBestellen */
-
-main section#onlineBestellen {
-	margin-bottom: var(--spacingElementen);
-	height: max-content;
-	grid-row-start: 5;
-	grid-column-start: var(--columnstartTwee) ;
-	grid-column-end: 4;
+p img {
+    max-width: 283px;
 }
 
-section#onlineBestellen h2 {
-	color: var(--donut-magenta);
-	font-family: var(--donut-font);
-	font-size: 4em;
-	text-transform: uppercase;
-	line-height: 94%;
+h1 {
+    padding-top: 2em;
+    margin-top: 15px;
+
+    font-family: var(--fontReg);
+    font-weight: 100;
+    font-size: 20px;
 }
 
-section#onlineBestellen em {
-	font-style: normal;
-	color: var(--donut-oranje);
+h2 {
+    font-family: var(--fontReg);
+    font-weight: 1;
 }
 
-/* Bestel uitleg blokken */
+p,
+ul {
+    font-family: var(--fontThin);
+    font-size: 16px;
+    font-weight: 500;
 
-section.bestelUitleg {
-	grid-column-start: var(--columnstartTwee);
-	grid-column-end: span 3;
-
-	display: grid;
-	grid-template-columns: 1fr 4fr;
-	grid-template-rows: 1fr 1fr;
-
-	background-color: var(--color-headerBackground);
-	padding: 1em;
-	margin-bottom: var(--spacingElementen);
-
-	border-radius: 4em;
+    list-style: inside;
 }
 
-section.bestelUitleg h3 {
-	color: var(--donut-magenta);
-	font-family: var(--donut-font);
-	text-transform: uppercase;
-	font-size: 1.1em;
-
-	margin: auto;
-
-	grid-column: 2 span 1;
-	grid-row: 1 span 1;
+em {
+    font-style: normal;
+    font-family: var(--fontReg);
+    font-weight: 1000;
 }
 
-section.bestelUitleg p {
-	grid-column: 2 span 1;
-	grid-row: 2 span 1;
-
-	color: rgb(146, 146, 146);
-	font-size: 0.8em;
-	font-family: var(--donut-font);
+p:first-of-type {
+    font-family: var(--fontReg);
+    font-weight: 700;
+    font-size: 16px;
 }
 
-section.bestelUitleg img {
-	grid-column-start: 1;
-	grid-column-end: span 1;
-	grid-row-start: 1;
-	grid-row-end: span 2;
-	margin: auto;
-	margin-right: 1em;
+footer {
+    width: 100vw;
+    position: fixed;
+    top: 85vh;
 
-	object-fit: contain;
-	width: 4em;
-	height: 4em;
-
-	padding: 5px;
-	background-color: var(--donut-magenta);
-	border-radius: 10em;
+    background-color: #28905B;
+    height: 15vh;
 }
 
-section.bestelUitleg img#oranjeBestel {
-	background-color: var(--donut-oranje);
+footer nav ul {
+    margin: 0;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1em;
+    margin-left: 1em;
+
+
+    width: 80vw;
 }
 
-section#bestelUitlegEen {
-	grid-row-start: 6;
+nav li {
+    display: flex;
+    align-items: center;
 }
 
-
-section#bestelUitlegTwee {
-	grid-row-start: 7;
+footer a {
+    text-decoration: none;
+    color: white;
 }
 
-
-section#bestelUitlegDrie {
-	grid-row-start: 8;
+footer a:active {
+    color: white;
 }
 
-/* app jij m al? sectie */
-
-section#appJij {
-	grid-column-start: var(--columnstartTwee);
-	grid-column-end: span 3;
-	grid-row-start: 9;
-
-	display: grid;
-	grid-template-columns: 1fr 80% 1fr;
-	grid-template-rows: 0.8fr 0.5fr 0.6fr 0.8fr 0.8fr 1fr;
-
-	padding: 2em;
-	padding-bottom: 0;
-	border-radius: 2.5em;
-
-	background-color: var(--donut-blauw);
+#home {
+    z-index: 1;
+    border-bottom: #1CB064 solid 10px;
 }
 
-section#appJij h2 {
-	grid-row-start: 1;
-	grid-column-start: 2;
-	grid-column-end: span 1;
-
-	color: white;
-	font-family: var(--donut-font);
-	text-transform: uppercase;
-	word-spacing: -1;
-
-	font-size: 2.8em;
-
-	max-width: fit-content;
-	margin: auto;
+#hoe {
+    z-index: 1;
+    border-bottom: #1CB064 solid 10px;
 }
 
-section#appJij h3 {
-	grid-row-start: 2;
-	grid-column-start: 2;
-	grid-column-end: span 1;
-
-	color: white;
-	font-family: var(--donut-font);
-
-	font-size: 1.3em;
-	margin: auto;
+#overige {
+    z-index: 1;
+    border-bottom: #1CB064 solid 10px;
 }
 
-section#appJij p {
-	grid-row-start: 3;
-	grid-column-start: 2;
-	grid-column-end: span 1;
+nav img {
+    width: 49.07px;
+    z-index: 1;
+    margin-top: -7em;
 
-	color: white;
-	font-family: var(--donut-font);
-	font-size: 1em;
-
-	margin: auto;
+    filter: drop-shadow(3px 5px 8px rgba(0, 0, 0, 0.297));
 }
 
-section#appJij a:first-of-type {
-	grid-row-start: 4;
-	grid-column-start: 2;
-	grid-column-end: span 1;
-
-	padding: 1em;
-	background-color: black;
-	border-radius: 4em;
-
-	margin: auto;
-	margin-bottom: 1em;
+#homebak {
+    margin-left: 3.7em;
 }
 
-section#appJij a {
-	grid-row-start: 5;
-	grid-column-start: 2;
-	grid-column-end: span 1;
-
-	padding: 1em;
-	background-color: black;
-	border-radius: 4em;
-
-	margin: auto;
-	margin-bottom: 1em;
+#hoebak {
+    margin-left: 10em;
 }
 
-section#appJij img {
-	grid-row-start: 6;
-	grid-column-start: 2;
-	grid-column-end: span 1;
-
-	object-fit: contain;
-	max-width: max-content;
-	width: 100%;
-	height: auto;
-	margin: auto;
-	margin-bottom: 0;
+#overigebak {
+    margin-left: 16.5em;
 }
 
+main img:last-of-type {
+    width: 100vw;
 
+    grid-column-start: 1;
+    padding-top: 2em;
+}
 
+#volgendePag {
+    grid-column-start: 2;
 
+    margin-top: 2.5em;
+    padding: 1em;
+    background-color: #8AC4A7;
+    border-radius: 20em;
 
+    color: white;
+    font-family: var(--fontReg);
+    text-decoration: none;
+    text-transform: uppercase;
+
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+
+    filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.24));
+}
