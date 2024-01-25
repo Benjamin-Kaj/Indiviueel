@@ -1,0 +1,200 @@
+@import url("https://use.typekit.net/uxe4vzr.css");
+
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --fontReg: "aktiv-grotesk", sans-serif;
+    --fontThin: "aktiv-grotesk-thin", sans-serif;
+    --fontLight: "aktiv-grotesk", sans-serif;
+}
+
+/* Hier begint mijn code */
+
+body {
+    background-image: repeating-linear-gradient(#89C4A7, #1f6f48, #1f6f48);
+
+}
+
+header {
+    display: flex;
+    padding-top: 2em;
+
+    justify-content: center;
+}
+
+header img {
+    width: 66px;
+
+    margin-bottom: -3em;
+    z-index: 1;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 2em 1fr 2em;
+    padding-bottom: 5em;
+    width: 100vw;
+
+}
+
+section {
+    background-color: white;
+    grid-column-start: 2;
+    border-left: 0.8em solid #FFE500;
+    display: grid;
+    grid-template-columns: 15px 1fr 15px;
+
+    padding-bottom: 2em;
+
+    filter: drop-shadow(2px 5px 5px rgba(0, 0, 0, 0.24));
+}
+
+h1,
+p,
+ul,
+h2 {
+    grid-column-start: 2;
+}
+
+p img {
+    max-width: 283px;
+}
+
+h1 {
+    padding-top: 2em;
+    margin-top: 15px;
+
+    font-family: var(--fontReg);
+    font-weight: 100;
+    font-size: 20px;
+}
+
+h2 {
+    font-family: var(--fontReg);
+    font-weight: 1;
+}
+
+p,
+ul {
+    font-family: var(--fontThin);
+    font-size: 16px;
+    font-weight: 500;
+
+    list-style: inside;
+}
+
+em {
+    font-style: normal;
+    font-family: var(--fontReg);
+    font-weight: 1000;
+}
+
+p:first-of-type {
+    font-family: var(--fontReg);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+footer {
+    width: 100vw;
+    position: fixed;
+    top: 85vh;
+
+    background-color: #28905B;
+    height: 15vh;
+}
+
+footer nav ul {
+    margin: 0;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 1em;
+    margin-left: 1em;
+
+
+    width: 80vw;
+}
+
+nav li {
+    display: flex;
+    align-items: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer a:active {
+    color: white;
+}
+
+#home {
+    z-index: 1;
+    border-bottom: #1CB064 solid 10px;
+}
+
+#hoe {
+    z-index: 1;
+    border-bottom: #1CB064 solid 10px;
+}
+
+#overige {
+    z-index: 1;
+    border-bottom: #1CB064 solid 10px;
+}
+
+nav img {
+    width: 49.07px;
+    z-index: 1;
+    margin-top: -7em;
+
+    filter: drop-shadow(3px 5px 8px rgba(0, 0, 0, 0.297));
+}
+
+#homebak {
+    margin-left: 3.7em;
+}
+
+#hoebak {
+    margin-left: 10em;
+}
+
+#overigebak {
+    margin-left: 16.5em;
+}
+
+main img:last-of-type {
+    width: 100vw;
+
+    grid-column-start: 1;
+    padding-top: 2em;
+}
+
+#volgendePag {
+    grid-column-start: 2;
+
+    margin-top: 2.5em;
+    padding: 1em;
+    background-color: #8AC4A7;
+    border-radius: 20em;
+
+    color: white;
+    font-family: var(--fontReg);
+    text-decoration: none;
+    text-transform: uppercase;
+
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+
+    filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.24));
+}
